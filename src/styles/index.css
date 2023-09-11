@@ -1,0 +1,25 @@
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-image: url('/src/walls/wall1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: x-large;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    
+}
