@@ -10,6 +10,12 @@
     padding: 1rem;
     text-align: center;
     margin-top: 1.5rem;
+    font-weight: 800;
+}
+.greeting-view::after{
+    content: "!";
+    font-weight: 400;
+    font-family: Arial;
 }
 
 .dashboard-view{
@@ -140,6 +146,45 @@
 }
 
 
+ /* Modal stylings  */
+.modal{
+    position: absolute;
+    inset: 0;}
+.modal .relative-container{
+    position: relative;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    inset: 0;
+}
+.modal-window{
+    background-color: rgba(255, 255, 255, 0.637);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    color: black;
+    padding: 3rem;
+    width: 60vw;
+}
+.modal-head{
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+}
+.modal-body{
+    margin: 1rem 0rem;
+}
+.modal-body input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    margin-inline: auto;
+    display: block;
+    width: 80%;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 300;
+}
 
 
 
@@ -156,6 +201,21 @@
 
 
 
+
+
+
+ /* Animations Idhar Likh raha hun main 🙂 */
+.hidden{
+    transition: visibility 1s, transform 1s, opacity 1s;
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+}
+.show{
+    transform: translateY(0px);
+    opacity: 1;
+    visibility: visible;
+}
 
 
 

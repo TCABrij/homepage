@@ -7,11 +7,10 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="src/styles/index.css">
     <link rel="stylesheet" href="src/styles/styles.css">
-    <script src="src/scripts/functions.js"></script>
     <script defer src="src/scripts/app.js"></script>
 </head>
 <body>
-    <div class="main-view">
+    <div class="main-view hidden">
         <!-- Greets user with his name  -->
         <div class="greeting-view"></div>
 
@@ -29,7 +28,7 @@
         <!-- User Favourite links  -->
         <div class="favourites-view block-center" id="style-1">
             <p class="favourites-title"> Favourites 
-                <span class="add-new-link">Add New Link</span>
+                <span class="add-new-link">Add New</span>
             </p>
             <div class="links">
                 <div class="link-card">
@@ -39,61 +38,18 @@
                         <p class="link-src">https://youtube.com/c/brijktechnicals</p>
                     </div>
                 </div>
-                <div class="link-card">
-                    <img src="src/img/icons/folder.png" alt="" class="logo">
-                    <div class="link-data">
-                        <p class="link-title">About Google Account </p>
-                        <p class="link-src">https://aboutme.google.com/</p>
-                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal hidden">
+        <div class="relative-container">
+            <div class="modal-window">
+                <div class="modal-head">
+                    Hey, What should I call You?
                 </div>
-                <div class="link-card">
-                    <img src="src/img/icons/folder.png" alt="" class="logo">
-                    <div class="link-data">
-                        <p class="link-title">Instagram </p>
-                        <p class="link-src">https://instagram.com</p>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <img src="src/img/icons/folder.png" alt="" class="logo">
-                    <div class="link-data">
-                        <p class="link-title">Facebook </p>
-                        <p class="link-src">https://facebok.com/</p>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <img src="src/img/icons/folder.png" alt="" class="logo">
-                    <div class="link-data">
-                        <p class="link-title"> Pinterest  </p>
-                        <p class="link-src">https://pinterest.com/</p>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <img src="src/img/icons/folder.png" alt="" class="logo">
-                    <div class="link-data">
-                        <p class="link-title">TikTok </p>
-                        <p class="link-src">https://tiktok.com</p>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <img src="src/img/icons/folder.png" alt="" class="logo">
-                    <div class="link-data">
-                        <p class="link-title">YouTube</p>
-                        <p class="link-src">https://youtube.com/</p>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <img src="src/img/icons/folder.png" alt="" class="logo">
-                    <div class="link-data">
-                        <p class="link-title">Reddit</p>
-                        <p class="link-src">https://reddit.com/</p>
-                    </div>
-                </div>
-                <div class="link-card">
-                    <img src="src/img/icons/folder.png" alt="" class="logo">
-                    <div class="link-data">
-                        <p class="link-title">Online SBI</p>
-                        <p class="link-src">https://onlinesbi.sbi.com/</p>
-                    </div>
+                <div class="modal-body">
+                    <input type="text" id="username" autocomplete="off" autofocus>
                 </div>
             </div>
         </div>
