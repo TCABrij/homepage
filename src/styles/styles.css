@@ -145,6 +145,19 @@
     overflow: hidden;
 }
 
+.no-links{
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-top: 1rem;
+}
+.no-links span{
+    display: block;
+    text-align: center;
+}
+.no-links span:last-child{
+    font-size: 3rem;
+}
+
 
  /* Modal stylings  */
 .modal{
