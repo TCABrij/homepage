@@ -52,54 +52,53 @@ if (isFirstVisit == 0) {
   } else showFavouritesToUser(favourites);
 }
 
-//   Add favourite links
+// Add favourite links
 const addNewBtn = document.querySelector(".add-new-link");
+const closeBtn = document.querySelector(".close-btn");
+const linkModal = document.querySelector(".modal.link");
+const addToBtn = document.querySelector(".add-to-btn");
+
+// User wants to add a link
 addNewBtn.addEventListener("click", addFavouriteLink);
 
-////////////////////
-//   Functions    //
-////////////////////
+// User doesn't want to add
+closeBtn.addEventListener("click", () => {
+  linkModal.classList.remove("show");
+});
 
-function addFavouriteLink() {
-  const closeBtn = document.querySelector(".close-btn");
-  const linkModal = document.querySelector(".modal.link");
+// Event listener for the "Add to Favorites" button
+addToBtn.addEventListener("click", () => {
+  // Get the user data
+  const siteTitle = document.getElementById("siteTitle").value;
+  const url = document.getElementById("url").value;
 
-  //show link wala Modal
-  linkModal.classList.add("show");
+  // Prevent: empty inputs
+  if (siteTitle == "" || url == "") return;
 
-  // finally adding something
-  document.querySelector(".add-to-btn").addEventListener("click", (e) => {
-    //get the user data
-    const siteTitle = document.getElementById("siteTitle").value;
-    const url = document.getElementById("url").value;
-
-    // prevent: empty inputs
-    if (siteTitle == "" || url == "") return;
-
-    // appending data to favourites
-    let linksWindow = document.querySelector(".links");
-    linksWindow.innerHTML += `
-      <div class="link-card">
-       <img src="src/img/icons/folder.png" alt="" class="logo">
-       <div class="link-data">
-          <p class="link-title" data-title="${siteTitle}"> ${siteTitle} </p>
-          <p class="link-src" data-url="${url}"> ${url} </p>
-       </div>
+  // Appending data to favorites
+  let linksWindow = document.querySelector(".links");
+  linksWindow.innerHTML += `
+    <div class="link-card">
+      <img src="src/img/icons/folder.png" alt="" class="logo">
+      <div class="link-data">
+        <p class="link-title" data-title="${siteTitle}"> ${siteTitle} </p>
+        <p class="link-src" data-url="${url}"> ${url} </p>
       </div>
-    `;
+    </div>
+  `;
 
-    // Remove no links alert
-    document.querySelector('.no-links').style.display = "none"
+  // Remove no links alert
+  document.querySelector(".no-links").style.display = "none";
 
-    console.log("added to favourites");
-    // Hide Modal
-    linkModal.classList.remove("show");
-  });
+  console.log("Added to favorites");
+  // Hide Modal
+  linkModal.classList.remove("show");
+});
 
-  // user don't want to add
-  closeBtn.addEventListener("click", () => {
-    linkModal.classList.remove("show");
-  });
+// Function to show the link modal
+function addFavouriteLink() {
+  // Show link modal
+  linkModal.classList.add("show");
 }
 
 function showFavouritesToUser(obj_as_string) {
