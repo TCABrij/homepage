@@ -221,7 +221,6 @@
 }
 .modal.link input{
     text-align: left;
-    text-transform: lowercase;
     font-size: 2rem;
     padding: 1rem;
 }

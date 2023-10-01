@@ -64,16 +64,36 @@ function addFavouriteLink() {
   const closeBtn = document.querySelector(".close-btn");
   const linkModal = document.querySelector(".modal.link");
 
-  //show link wala Modal 
-  linkModal.classList.add("show")
+  //show link wala Modal
+  linkModal.classList.add("show");
 
   // finally adding something
-  document.querySelector(".add-to-btn").addEventListener("click", () => {
-    
-    // work resumed
-    console.log("added to favourites");
-    linkModal.classList.remove("show")
+  document.querySelector(".add-to-btn").addEventListener("click", (e) => {
+    //get the user data
+    const siteTitle = document.getElementById("siteTitle").value;
+    const url = document.getElementById("url").value;
 
+    // prevent: empty inputs
+    if (siteTitle == "" || url == "") return;
+
+    // appending data to favourites
+    let linksWindow = document.querySelector(".links");
+    linksWindow.innerHTML += `
+      <div class="link-card">
+       <img src="src/img/icons/folder.png" alt="" class="logo">
+       <div class="link-data">
+          <p class="link-title" data-title="${siteTitle}"> ${siteTitle} </p>
+          <p class="link-src" data-url="${url}"> ${url} </p>
+       </div>
+      </div>
+    `;
+
+    // Remove no links alert
+    document.querySelector('.no-links').style.display = "none"
+
+    console.log("added to favourites");
+    // Hide Modal
+    linkModal.classList.remove("show");
   });
 
   // user don't want to add
