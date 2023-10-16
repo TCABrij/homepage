@@ -172,6 +172,54 @@
     font-size: 3rem;
 }
 
+.link-options{
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    /* opacity: 0; */
+}
+
+.relative-wrapper{
+    position: relative;
+}
+
+.relative-wrapper .options{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 13px;
+    background-color: rgba(255, 255, 255, 0.233);
+    padding: .5rem .1rem 0rem;
+    display: none;
+    z-index: 0;
+    user-select: none;
+}
+.relative-wrapper .options p{
+    padding: .1rem .2rem;
+    user-select: none;
+}
+.relative-wrapper .options p:hover{
+    outline: 1px solid grey;
+    cursor: pointer;
+}
+
+.link-card:hover .link-options{
+    opacity: 1;
+}
+img.dots{
+    border-radius: 100%;
+    width: 20px;
+    filter: invert();
+    transition: outline .3s;
+    z-index: 99;
+}
+img.dots:hover{
+    cursor: pointer;
+    outline: 1px solid grey;
+    background-color: rgba(0, 0, 0, 0.253);
+}
+
+
 
  /* Modal stylings  */
 

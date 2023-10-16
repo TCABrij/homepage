@@ -84,6 +84,15 @@ addToBtn.addEventListener("click", () => {
         <p class="link-title" data-title="${siteTitle}"> ${siteTitle} </p>
         <p class="link-src" data-url="${url}"> ${url} </p>
       </div>
+      <div class="link-options">
+        <div class="relative-wrapper">
+          <img onclick="toggleOptions()" src="/src/img/icons/dots.svg" class="dots" alt="options">
+            <div class="options">
+              <p class="edit" onclick="toggleOptions()">Edit</p>
+              <p class="delete" onclick="toggleOptions()">Delete</p>
+            </div>
+        </div>
+      </div>
     </div>
   `;
 
