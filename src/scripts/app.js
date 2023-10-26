@@ -44,7 +44,7 @@ if (isFirstVisit == 0) {
   //   favourite links of User   //
   ////////////////////////////////
 
-  const favourites = localStorage.getItem("favourites") || "nothing";
+  const favourites = localStorage.getItem("links") || "nothing";
 
   if (favourites === "nothing") {
     // show no links
@@ -77,28 +77,40 @@ addToBtn.addEventListener("click", () => {
 
   // Appending data to favorites
   let linksWindow = document.querySelector(".links");
-  let uniqueId = getRandomId()
-  console.log(uniqueId);
-  linksWindow.innerHTML += `
-  <div class="link-card hidden show" id=${uniqueId}>
-  <img src="src/img/icons/folder.png" alt="" class="logo">
-  <div class="link-data">
-      <p class="link-title" data-title="${siteTitle}"> ${siteTitle} </p>
-      <p class="link-src" data-url="${url}"> ${url}</p>
-  </div>
-  <div class="link-options">
-      <div class="relative-wrapper">
-          <button class="options-toggle-btn">
-              <img src="/src/img/icons/dots.svg" class="dots" alt="options">
-              <div class="options">
-                  <p class="edit" onClick="editOrDelete(this)">Edit</p>
-                  <p class="delete" onClick="editOrDelete(this)">Delete</p>
-              </div>
-          </button>
-      </div>
-  </div>
-</div>
-  `;
+
+  //create linkObject and Render card to UI
+  const randomUniqueId = getRandomId()
+  const newLink = {
+    id: randomUniqueId,
+    title: siteTitle,
+    url: url,
+  };
+  renderLinkToUi(newLink);
+
+  // Storing link to LocalStorage as json string
+  let linksJsonString = localStorage.getItem("links") || undefined;
+  if (linksJsonString == undefined) {
+    // Set Fresh links Object in storage
+    localStorage.setItem(
+      "links",
+      `{"links": [{"id": "${randomUniqueId}", "title": "${siteTitle}", "url": "${url}"}]}`
+    );
+  } else {
+    // set new link to existing links object in storage
+    let linksObject = JSON.parse(linksJsonString);
+
+    const newLinkObj = {
+      id: randomUniqueId,
+      title: siteTitle,
+      url: url,
+    };
+    // push new link to existing links array & convert back to jsonString
+    linksObject.links.push(newLinkObj);
+    let newLinksJsonString = JSON.stringify(linksObject);
+
+    // Sent back new Data to LocalStorage
+    localStorage.setItem("links", newLinksJsonString);
+  }
 
   // Remove no links alert
   document.querySelector(".no-links").style.display = "none";
@@ -116,7 +128,37 @@ function addFavouriteLink() {
 
 function showFavouritesToUser(obj_as_string) {
   let favourites = JSON.parse(obj_as_string);
+  favourites.links.forEach((link) => {
+    renderLinkToUi(link);
+  });
   console.log(favourites);
+}
+
+// take an array
+function renderLinkToUi(linkObj) {
+  let linksWindow = document.querySelector(".links");
+  linksWindow.innerHTML += `
+  <div class="link-card hidden show" id=${linkObj.id}>
+  <img src="src/img/icons/folder.png" alt="" class="logo">
+  <div class="link-data">
+      <p class="link-title" data-title="${linkObj.title}"> ${linkObj.title} </p>
+      <p class="link-src" data-url="${linkObj.url}"> ${linkObj.url}</p>
+  </div>
+  <div class="link-options">
+      <div class="relative-wrapper">
+          <button class="options-toggle-btn">
+              <img src="/src/img/icons/dots.svg" class="dots" alt="options">
+              <div class="options">
+                  <p class="edit" onClick="editOrDelete(this)">Edit</p>
+                  <p class="delete" onClick="editOrDelete(this)">Delete</p>
+              </div>
+          </button>
+      </div>
+  </div>
+</div>
+  `;
+  // hide no links alert
+  document.querySelector('.no-links').style.display = "none"
 }
 
 // function to welcome user

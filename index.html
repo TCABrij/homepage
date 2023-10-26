@@ -42,19 +42,19 @@
                 </p>
 
                 <!-- Link Card Template  -->
-                <!-- <div class="link-card">
+                <!-- <div class="link-card hidden show" id=${uniqueId}>
                     <img src="src/img/icons/folder.png" alt="" class="logo">
                     <div class="link-data">
-                        <p class="link-title" data-title="${siteTitle}"> Example Site </p>
-                        <p class="link-src" data-url="${url}"> https://exampleurl.com</p>
+                        <p class="link-title" data-title="${siteTitle}"> Site Title </p>
+                        <p class="link-src" data-url="${url}"> https://example.com/</p>
                     </div>
                     <div class="link-options">
                         <div class="relative-wrapper">
                             <button class="options-toggle-btn">
                                 <img src="/src/img/icons/dots.svg" class="dots" alt="options">
                                 <div class="options">
-                                    <p class="edit">Edit</p>
-                                    <p class="delete">Delete</p>
+                                    <p class="edit" onClick="editOrDelete(this)">Edit</p>
+                                    <p class="delete" onClick="editOrDelete(this)">Delete</p>
                                 </div>
                             </button>
                         </div>
