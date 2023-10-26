@@ -79,7 +79,7 @@ addToBtn.addEventListener("click", () => {
   let linksWindow = document.querySelector(".links");
 
   //create linkObject and Render card to UI
-  const randomUniqueId = getRandomId()
+  const randomUniqueId = getRandomId();
   const newLink = {
     id: randomUniqueId,
     title: siteTitle,
@@ -127,11 +127,15 @@ function addFavouriteLink() {
 }
 
 function showFavouritesToUser(obj_as_string) {
-  let favourites = JSON.parse(obj_as_string);
+  try {
+    var favourites = JSON.parse(obj_as_string);
+  } catch (e) {
+    console.log("Error Occured: " + e);
+  }
+
   favourites.links.forEach((link) => {
     renderLinkToUi(link);
   });
-  console.log(favourites);
 }
 
 // take an array
@@ -158,11 +162,35 @@ function renderLinkToUi(linkObj) {
 </div>
   `;
   // hide no links alert
-  document.querySelector('.no-links').style.display = "none"
+  document.querySelector(".no-links").style.display = "none";
 }
 
 // function to welcome user
 function setGreeting(message) {
   let greetDiv = document.querySelector(".greeting-view");
   greetDiv.textContent = `Hello ${message}`;
+}
+
+// Editing and Deleting functionality
+function editOrDelete(target) {
+  const className = target.className;
+  //edit
+  if (className == "edit") {
+  }
+  // delete
+  else {
+    const cardElement =
+      target.parentElement.parentElement.parentElement.parentElement
+        .parentElement;
+    let idOfCard = cardElement.id;
+
+    // Remove the Card
+    cardElement.classList.remove("show");
+    setTimeout(() => {
+      cardElement.remove();
+    }, 1000);
+
+    // Remove the card from Local Storage using id
+    deleteElementById(idOfCard);
+  }
 }
