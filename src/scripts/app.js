@@ -77,23 +77,27 @@ addToBtn.addEventListener("click", () => {
 
   // Appending data to favorites
   let linksWindow = document.querySelector(".links");
+  let uniqueId = getRandomId()
+  console.log(uniqueId);
   linksWindow.innerHTML += `
-    <div class="link-card">
-      <img src="src/img/icons/folder.png" alt="" class="logo">
-      <div class="link-data">
-        <p class="link-title" data-title="${siteTitle}"> ${siteTitle} </p>
-        <p class="link-src" data-url="${url}"> ${url} </p>
+  <div class="link-card" id=${uniqueId}>
+  <img src="src/img/icons/folder.png" alt="" class="logo">
+  <div class="link-data">
+      <p class="link-title" data-title="${siteTitle}"> ${siteTitle} </p>
+      <p class="link-src" data-url="${url}"> ${url}</p>
+  </div>
+  <div class="link-options">
+      <div class="relative-wrapper">
+          <button class="options-toggle-btn">
+              <img src="/src/img/icons/dots.svg" class="dots" alt="options">
+              <div class="options">
+                  <p class="edit" onClick="editOrDelete(this)">Edit</p>
+                  <p class="delete" onClick="editOrDelete(this)">Delete</p>
+              </div>
+          </button>
       </div>
-      <div class="link-options">
-        <div class="relative-wrapper">
-          <img onclick="toggleOptions()" src="/src/img/icons/dots.svg" class="dots" alt="options">
-            <div class="options">
-              <p class="edit" onclick="toggleOptions()">Edit</p>
-              <p class="delete" onclick="toggleOptions()">Delete</p>
-            </div>
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
   `;
 
   // Remove no links alert

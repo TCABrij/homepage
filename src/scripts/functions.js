@@ -1,8 +1,37 @@
-function toggleOptions() {
-  let display = document.querySelector(".relative-wrapper .options").style.display;
-  if (display == "block") {
-    document.querySelector(".relative-wrapper .options").style.display = "none";
-    return;
+function editOrDelete(target) {
+  const elem = target.className
+  //edit
+  if(elem == "edit"){
+
   }
-  document.querySelector(".relative-wrapper .options").style.display = "block";
+  // delete
+  else{
+    const cardElement = target.parentElement.parentElement.parentElement.parentElement.parentElement
+    let idOfCard = cardElement.id;
+
+    // Remove the Card
+    cardElement.remove()
+
+    // Remove the card from Local Storage using id
+    // code 
+
+  }
+
+
+}
+
+
+// Returns 6 digits alphanumeric string
+function getRandomId(){
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVQXYZabcdefghijklmnopqrstuvwxyz1234567890"
+  const idRange = letters.length + 1;
+  var id = ""
+  const idLength = 10;
+  while(id.length<=idLength){
+    const RandomNum = Math.floor(Math.random() * idRange)
+    id += letters[RandomNum]
+    if(id.length === idLength)
+     return id
+  }
+
 }
