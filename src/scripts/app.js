@@ -80,7 +80,7 @@ addToBtn.addEventListener("click", () => {
   let uniqueId = getRandomId()
   console.log(uniqueId);
   linksWindow.innerHTML += `
-  <div class="link-card" id=${uniqueId}>
+  <div class="link-card hidden show" id=${uniqueId}>
   <img src="src/img/icons/folder.png" alt="" class="logo">
   <div class="link-data">
       <p class="link-title" data-title="${siteTitle}"> ${siteTitle} </p>

@@ -10,7 +10,8 @@ function editOrDelete(target) {
     let idOfCard = cardElement.id;
 
     // Remove the Card
-    cardElement.remove()
+    cardElement.classList.remove('show')
+    setTimeout(()=> {cardElement.remove()}, 1000)
 
     // Remove the card from Local Storage using id
     // code 
