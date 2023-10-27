@@ -7,15 +7,35 @@
 }
 
 .greeting-view{
-    padding: 1rem;
+    padding: 0rem 1rem;
     text-align: center;
     margin-top: 1.5rem;
     font-weight: 800;
+    position: relative;
+    max-width: max-content;
+    margin-inline: auto;
 }
-.greeting-view::after{
-    content: "!";
-    font-weight: 400;
-    font-family: Arial;
+
+.greeting-view .edit-btn-img{
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: -10%;
+    /* background-color: white; */
+    filter: invert();
+    border-radius: 100%;
+    visibility: hidden;
+    transition: scale .4s;
+}
+
+.greeting-view .edit-btn-img:hover{
+    scale: 1.2;
+    cursor: pointer;
+    background-color: white;
+}
+
+.greeting-view:hover .edit-btn-img{
+    visibility: visible;
 }
 
 .dashboard-view{

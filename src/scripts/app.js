@@ -167,8 +167,8 @@ function renderLinkToUi(linkObj) {
 
 // function to welcome user
 function setGreeting(message) {
-  let greetDiv = document.querySelector(".greeting-view");
-  greetDiv.textContent = `Hello ${message}`;
+  let greetDiv = document.querySelector(".greeting");
+  greetDiv.textContent += `${message}!`;
 }
 
 // Editing and Deleting functionality
@@ -192,5 +192,15 @@ function editOrDelete(target) {
 
     // Remove the card from Local Storage using id
     deleteElementById(idOfCard);
+  }
+}
+
+function changeUserName(){
+  let newName = prompt("What should I call you?")
+  if(newName){
+    // Render new name to UI
+    document.querySelector('.greeting').textContent = `Hello ${newName}!`
+    // Update to LocalStorage too
+    localStorage.setItem("username", newName)
   }
 }
