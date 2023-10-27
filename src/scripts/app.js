@@ -151,7 +151,7 @@ function renderLinkToUi(linkObj) {
   <div class="link-options">
       <div class="relative-wrapper">
           <button class="options-toggle-btn">
-              <img src="/src/img/icons/dots.svg" class="dots" alt="options">
+              <img src="src/img/icons/dots.svg" class="dots" alt="options">
               <div class="options">
                   <p class="edit" onClick="editOrDelete(this)">Edit</p>
                   <p class="delete" onClick="editOrDelete(this)">Delete</p>
