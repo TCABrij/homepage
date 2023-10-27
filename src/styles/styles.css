@@ -51,6 +51,8 @@
     width: 40%;
     outline: 1px solid grey;
     padding-left: 1.2rem;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 .search-form input:hover:first-child{
     box-shadow: 0px 0px 2px grey;
@@ -62,6 +64,8 @@
 .search-form input:last-child{
     cursor: pointer;
     background-color: rgba(0, 0, 0, .4);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 }
 
 
@@ -122,6 +126,7 @@
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.4);
     transition: scale .3s;
+    user-select: none;
 }
 .link-card:hover{
     background-color: rgba(0, 0, 0, 0.6);
@@ -326,5 +331,18 @@ img.dots:hover{
 @media only screen and (max-width: 772px){
     .link-card{
         width: 100%;
+    }
+    .modal-window{
+        width: 90vw;
+    }
+    .modal-head{
+        font-size: 1.6rem;
+        font-weight: 400;
+    }
+    .modal-body input{
+        width: 100%;
+    }
+    input#q{
+        width: auto;
     }
 }
