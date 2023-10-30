@@ -70,7 +70,7 @@ closeBtn.addEventListener("click", () => {
 addToBtn.addEventListener("click", () => {
   // Get the user data
   const siteTitle = document.getElementById("siteTitle").value;
-  const url = document.getElementById("url").value;
+  const url = document.getElementById("url").value.toLowerCase();
 
   // Prevent: empty inputs
   if (siteTitle == "" || url == "") return;
@@ -113,7 +113,7 @@ addToBtn.addEventListener("click", () => {
   }
 
   // Remove no links alert
-  document.querySelector(".no-links").style.display = "none";
+  document.querySelector(".no-links").classList.remove('show')
 
   console.log("Added to favorites");
   // Hide Modal
@@ -162,7 +162,10 @@ function renderLinkToUi(linkObj) {
 </div>
   `;
   // hide no links alert
-  document.querySelector(".no-links").style.display = "none";
+  document.querySelector(".no-links").classList.remove('show')
+  setTimeout(()=>{
+    document.querySelector('.no-links').style.display = "none";
+  }, 0)
 }
 
 // function to welcome user
