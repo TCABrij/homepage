@@ -14,6 +14,12 @@ function getRandomId(){
 
 }
 
+// URL Validator
+function isValidUrl(url) {
+  const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+  return urlRegex.test(url);
+}
+
 // Delete link object from localStorage using unique id of link-card
 function deleteElementById(id){
   let links = localStorage.getItem('links')
@@ -48,3 +54,27 @@ function deleteElementById(id){
   // Update to localStorage too
   localStorage.setItem('links', updatedJsonString)
 }
+
+function openLink(event){
+  const target = event.target
+  const elemClass = target.className
+
+  // Avoiding menu clicks 
+  if(elemClass == "edit" || elemClass == "delete" || elemClass == "options-toggle-btn" || 
+  elemClass == "dots"){
+    return 
+  }
+
+  const url = target.dataset.url
+
+  // Creat Anchor and set url | 
+  const anchor = document.createElement('a')
+  anchor.href = url
+  anchor.target = "_blank"
+  document.body.appendChild(anchor)
+
+  // Click Simulation
+  anchor.click()
+  console.log(url)
+}
+

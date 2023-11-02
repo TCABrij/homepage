@@ -75,6 +75,12 @@ addToBtn.addEventListener("click", () => {
   // Prevent: empty inputs
   if (siteTitle == "" || url == "") return;
 
+  // Validating URL
+  if(!isValidUrl(url)){
+    alert("Please enter a valid URL")
+    return
+  }
+
   // Appending data to favorites
   let linksWindow = document.querySelector(".links");
 
@@ -142,17 +148,17 @@ function showFavouritesToUser(obj_as_string) {
 function renderLinkToUi(linkObj) {
   let linksWindow = document.querySelector(".links");
   linksWindow.innerHTML += `
-  <div class="link-card hidden show" id=${linkObj.id}>
-  <img src="src/img/icons/folder.png" alt="" class="logo">
-  <div class="link-data">
-      <p class="link-title" data-title="${linkObj.title}"> ${linkObj.title} </p>
+  <div class="link-card hidden show" onClick="openLink(event)" id=${linkObj.id} data-url="${linkObj.url}">
+  <img src="src/img/icons/folder.png" alt="" class="logo" data-url="${linkObj.url}">
+  <div class="link-data" data-url="${linkObj.url}">
+      <p class="link-title" data-url="${linkObj.url}" data-title="${linkObj.title}"> ${linkObj.title} </p>
       <p class="link-src" data-url="${linkObj.url}"> ${linkObj.url}</p>
   </div>
-  <div class="link-options">
-      <div class="relative-wrapper">
-          <button class="options-toggle-btn">
-              <img src="src/img/icons/dots.svg" class="dots" alt="options">
-              <div class="options">
+  <div class="link-options" data-url="${linkObj.url}">
+      <div class="relative-wrapper" data-url="${linkObj.url}">
+          <button class="options-toggle-btn" onClick="editOrDelete(this)" data-url="${linkObj.url}">
+              <img src="src/img/icons/dots.svg" class="dots" alt="options" data-url="${linkObj.url}">
+              <div class="options" data-url="${linkObj.url}">
                   <p class="edit" onClick="editOrDelete(this)">Edit</p>
                   <p class="delete" onClick="editOrDelete(this)">Delete</p>
               </div>
@@ -181,7 +187,7 @@ function editOrDelete(target) {
   if (className == "edit") {
   }
   // delete
-  else {
+  else if(className == "delete") {
     const cardElement =
       target.parentElement.parentElement.parentElement.parentElement
         .parentElement;
@@ -195,6 +201,9 @@ function editOrDelete(target) {
 
     // Remove the card from Local Storage using id
     deleteElementById(idOfCard);
+  }
+  else{
+    return
   }
 }
 
