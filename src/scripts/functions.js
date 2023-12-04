@@ -78,3 +78,14 @@ function openLink(event){
   console.log(url)
 }
 
+
+function updateModal(target){
+  //get current info
+  const currentCard = target.closest(".link-card")
+  const currentTitle = currentCard.querySelector(".link-title").textContent.trim()
+  const currentUrl = currentCard.querySelector(".link-src").textContent.trim()
+
+  //set current info to dialog
+  document.querySelector('#titleInput').value = currentTitle
+  document.querySelector('#urlInput').value = currentUrl
+}

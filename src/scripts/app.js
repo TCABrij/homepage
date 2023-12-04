@@ -185,6 +185,10 @@ function editOrDelete(target) {
   const className = target.className;
   //edit
   if (className == "edit") {
+    const myDialog = document.getElementById("myDialog")
+    myDialog.showModal()
+    //fill current data in the modal
+    updateModal(target)
   }
   // delete
   else if(className == "delete") {
