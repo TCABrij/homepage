@@ -55,6 +55,11 @@ function deleteElementById(id){
   localStorage.setItem('links', updatedJsonString)
 }
 
+// Update link object from local storage using id of link-card
+function updateById(id, newDataObj){
+  console.log(id, newDataObj);
+}
+
 function openLink(event){
   const target = event.target
   const elemClass = target.className
@@ -88,4 +93,29 @@ function updateModal(target){
   //set current info to dialog
   document.querySelector('#titleInput').value = currentTitle
   document.querySelector('#urlInput').value = currentUrl
+  document.querySelector('#cardId').value = currentCard.id
+}
+
+function editAndUpdateTheCard(targetButton){
+  // Get Updated URL and Title from dialog
+  const inputs = document.querySelectorAll('#myDialog input')
+  const modalData = []
+  inputs.forEach( input => modalData.push(input.value))
+  const [title, url, id] = modalData
+
+  if(isValidUrl(url)){
+    //Update  the Card UI with new Data
+    const targetCard = document.querySelector(`#${id}`)
+    targetCard.querySelector('.link-title').textContent = title
+    targetCard.querySelector('.link-src').textContent = url
+
+    // Update Data in LocalStorage
+    updateById(id, {title, url})
+
+    // close the dialog
+    document.querySelector("#myDialog").close()
+  }
+
+  
+  
 }

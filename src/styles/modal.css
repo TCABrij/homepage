@@ -51,6 +51,10 @@
 
   }
 
+  #myDialog input:last-child{
+    color: grey;
+    cursor: not-allowed;
+  }
 
 
 

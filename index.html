@@ -110,9 +110,10 @@
         <div class="dialog-body">
             <input type="text" id="titleInput" placeholder="Edit Title"><br>
             <input type="text" id="urlInput" placeholder="Edit URL">
+            <input type="text" id="cardId" readonly>
         </div>
         <div class="dialog-buttons">
-            <button id="editDialog">Edit</button>
+            <button id="editDialog" onclick="editAndUpdateTheCard(this)">Edit</button>
             <button id="closeDialog" onclick="myDialog.close()">Close</button>
         </div>
     </dialog>
