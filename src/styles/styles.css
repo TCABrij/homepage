@@ -182,6 +182,7 @@
     width: 25ch;
     text-overflow: ellipsis;
     overflow: hidden;
+    text-wrap: nowrap;
 }
 
 .no-links{
