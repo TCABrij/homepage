@@ -231,6 +231,14 @@
 .link-card:hover .link-options{
     opacity: 1;
 }
+
+/* Touch Device Detection  */
+@media (hover : none){
+    .link-card .link-options{
+        opacity: 1;
+    }
+}
+
 img.dots{
     border-radius: 100%;
     width: 20px;

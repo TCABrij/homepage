@@ -1,0 +1,64 @@
+/* 
+
+   Theme Toggle Button 
+
+*/
+
+.theme-modes-view{
+    position: absolute;
+    left: 1%;
+    bottom: 1%;
+    cursor: pointer;
+}
+
+/* Base styles for the button */
+#theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f5f5f5; /* Light mode background */
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Icons within the button */
+  #theme-toggle span {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+  }
+  
+  /* Light mode styles */
+  body.light #theme-toggle {
+    background-color: #f5f5f5;
+  }
+  
+  body.light #theme-toggle .sun-icon {
+    display: block;
+  }
+  
+  /* Dark mode styles */
+  body.dark #theme-toggle {
+    background-color: #333;
+  }
+  
+  body.dark #theme-toggle .moon-icon {
+    display: block;
+  }
+  
+  /* Icon styles (replace with your icons) */
+  .sun-icon {
+    background-image: url("../img/icons/sun.svg");
+    scale: 1.5;
+}
+
+.moon-icon {
+    background-image: url("../img/icons/moon.svg");
+    scale: 1.5;
+  }
+  

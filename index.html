@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="src/styles/index.css">
     <link rel="stylesheet" href="src/styles/styles.css">
     <link rel="stylesheet" href="src/styles/modal.css">
+    <link rel="stylesheet" href="src/styles/button.css">
     <script defer src="src/scripts/app.js"></script>
     <script src="src/scripts/functions.js" defer></script>
 </head>
@@ -119,6 +120,33 @@
     </dialog>
 
 
+    <!-- Dark and Light Modes  -->
+    <div class="theme-modes-view">
+        <button id="theme-toggle">
+            <span class="sun-icon"></span>
+            <span class="moon-icon"></span>
+        </button>
+    </div>
+    <script>
+        const themeToggleButton = document.getElementById("theme-toggle");
+        const bodyy = document.body;
+
+        themeToggleButton.addEventListener("click", () => {
+            bodyy.classList.toggle("dark");
+            localStorage.setItem("theme", bodyy.classList.contains("dark") ? "dark" : "light");
+
+            //reload
+            document.location.reload()
+        });
+
+        // Check for user's preferred theme on page load
+        const preferredTheme = localStorage.getItem("theme");
+        if (preferredTheme) {
+            bodyy.classList.add(preferredTheme);
+        }
+
+
+    </script>
 
     <script src="src/scripts/background.js"></script>
 </body>
