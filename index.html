@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="src/styles/index.css">
     <link rel="stylesheet" href="src/styles/styles.css">
     <link rel="stylesheet" href="src/styles/modal.css">
-    <link rel="stylesheet" href="src/styles/button.css">
+    <link rel="stylesheet" href="src/styles/settings.css">
     <script defer src="src/scripts/app.js"></script>
     <script src="src/scripts/functions.js" defer></script>
 </head>
@@ -19,7 +19,6 @@
         <!-- Greets user with his name  -->
         <div class="greeting-view">
             <div class="greeting">Hello </div>
-            <img onclick="changeUserName()" src="src/img/icons/edit.gif" alt="edit" class="edit-btn-img">
         </div>
 
         <!-- contains search  -->
@@ -36,14 +35,12 @@
         <!-- User Favorite links  -->
         <div class="favourites-view block-center" id="style-1">
             <p class="favourites-title"> Favorites
-                <span class="add-new-link">Add New</span>
+                <span class="add-new-link"> + </span>
             </p>
             <div class="links">
 
                 <p class="no-links hidden">
-                    <span> You've no Favorite links </span>
-                    <span> Please add some </span>
-                    <span> 🥺 </span>
+                    <span> You've no Favorite links, Please add some 🤷‍♂️ </span>
                 </p>
 
                 <!-- Link Card Template  -->
@@ -120,13 +117,22 @@
     </dialog>
 
 
-    <!-- Dark and Light Modes  -->
-    <div class="theme-modes-view">
-        <button id="theme-toggle">
-            <span class="sun-icon"></span>
-            <span class="moon-icon"></span>
+    <!-- Settings   -->
+    <div class="settings-view">
+        <button class="settings">
+            <img src="src/img/icons/gear.svg" alt="">
         </button>
+        <div class="theme-modes">
+            <button id="theme-toggle">
+                <span class="sun-icon"></span>
+                <span class="moon-icon"></span>
+            </button>
+        </div>
+        <!-- Edit  -->
+        <img onclick="changeUserName()" src="src/img/icons/edit.svg" alt="edit" class="edit-btn-img">
+
     </div>
+
     <script>
         const themeToggleButton = document.getElementById("theme-toggle");
         const bodyy = document.body;

@@ -9,7 +9,7 @@ if (theme == "dark") {
   src = `url('src/img/walls/dark/dark${randomNum}.jpg')`;
 } else {
   // Normal Light mode
-  randomNum = Math.floor(Math.random() * 7 + 1); // We have 8 light wallpapers
+  randomNum = Math.floor(Math.random() * 8 + 1); // We have 9 light wallpapers
   src = `url('src/img/walls/light${randomNum}.jpg')`;
 }
 
