@@ -148,7 +148,7 @@ function showFavouritesToUser(obj_as_string) {
 function renderLinkToUi(linkObj) {
   let linksWindow = document.querySelector(".links");
   linksWindow.innerHTML += `
-  <div class="link-card hidden show" onClick="openLink(event)" id=${linkObj.id} data-url="${linkObj.url}">
+  <div class="link-card hidden show" onClick="openLink(event)" title="Open in new Tab" id=${linkObj.id} data-url="${linkObj.url}">
   <img src="src/img/icons/folder.png" alt="" class="logo" data-url="${linkObj.url}">
   <div class="link-data" data-url="${linkObj.url}">
       <p class="link-title" data-url="${linkObj.url}" data-title="${linkObj.title}"> ${linkObj.title} </p>

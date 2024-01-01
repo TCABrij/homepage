@@ -1,9 +1,11 @@
 .main-view{
     height: 100vh;
-    max-width: 90vw;
     margin-inline: auto;
     position: relative;
     overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .greeting-view{

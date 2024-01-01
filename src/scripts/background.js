@@ -13,4 +13,11 @@ if (theme == "dark") {
   src = `url('src/img/walls/light${randomNum}.jpg')`;
 }
 
-body.style.backgroundImage = src;
+let mainDiv = document.querySelector('.main-view')
+mainDiv.style.backgroundImage = src;
+
+// // Page Cut-off problem
+// setInterval(() => {
+//   let mainDiv = document.querySelector('.main-view')
+//   mainDiv.style.height = window.innerHeight + "px";
+// }, 1000);

@@ -17,14 +17,14 @@
 <body>
     <div class="main-view hidden">
         <!-- Greets user with his name  -->
-        <div class="greeting-view">
+        <div class="greeting-view untouchable">
             <div class="greeting">Hello </div>
         </div>
 
         <!-- contains search  -->
         <div class="dashboard-view">
             <div class="search-view">
-                <img src="src/img/icons/browse.png" class="browse-img block-center" alt="">
+                <img src="src/img/icons/browse.jpg" style="border-radius: 50%;" class="browse-img block-center untouchable" alt="">
                 <form action="https://google.com/search?" class="block-center search-form">
                     <input type="text" placeholder="Got Issues?" autofocus required name="q" id="q" autocomplete="off">
                     <input type="submit" class="search-btn" value="Search">
@@ -118,18 +118,18 @@
 
 
     <!-- Settings   -->
-    <div class="settings-view">
+    <div class="settings-view" title="Settings">
         <button class="settings">
             <img src="src/img/icons/gear.svg" alt="">
         </button>
-        <div class="theme-modes">
+        <div class="theme-modes" title="Theme">
             <button id="theme-toggle">
                 <span class="sun-icon"></span>
                 <span class="moon-icon"></span>
             </button>
         </div>
         <!-- Edit  -->
-        <img onclick="changeUserName()" src="src/img/icons/edit.svg" alt="edit" class="edit-btn-img">
+        <img title="Edit Name" onclick="changeUserName()" src="src/img/icons/edit.svg" alt="edit" class="edit-btn-img">
 
     </div>
 
@@ -153,7 +153,6 @@
 
 
     </script>
-
     <script src="src/scripts/background.js"></script>
 </body>
 
