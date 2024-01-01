@@ -57,7 +57,7 @@ button.settings{
 
 .settings:hover,
 .theme-modes:hover{
-  animation: rotate .4s;
+  animation: rotate .4s forwards;
 }
 
 .edit-btn-img:hover{
