@@ -1,6 +1,6 @@
 Known Bugs
 ==========
-refreshing cuts off the content of page //
+Editing favorite links doesn't update the DOM(without refresh)
 
 To dos
 ===================
