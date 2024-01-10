@@ -362,3 +362,104 @@ img.dots:hover{
         width: auto;
     }
 }
+
+/* snapping scroll  */
+body{
+    overflow: auto;
+    scroll-snap-type: mandatory;
+}
+.section-extras{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #efefef;
+    z-index: -1;
+}
+
+.section-extras img{
+    width: inherit;
+    height: inherit;
+    display: block;
+    border-radius: 100%;
+}
+.section-main, 
+.section-extras{
+    scroll-snap-align: end;
+}
+
+ /* border */
+.outer{
+    background-color: transparent;
+    height: 400px;
+    width: 400px;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+    z-index: 0;
+    box-shadow: 0px 0px 30px 0px rgb(0 0 0 / .3);
+    transition: all .3s;
+}
+.inner{
+    height: 350px;
+    width: 350px;
+    background-color: white;
+    position: relative;
+}
+.outer,
+.inner{
+    border-radius: 100%;
+}
+
+.inner::before{
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 60%;
+    top: 50%;
+    left: -10%;
+    transform: translateY(-50%);
+    transform-origin: right;
+    background-color: violet;
+    animation: spin 4s infinite linear;
+    z-index: -1;
+}
+@keyframes spin {
+    14%{
+        background-color: indigo;
+    }
+    28%{
+        background-color: blue;
+    }
+    42%{
+        background-color: green;
+    }
+    56%{
+        background-color: yellow;
+    }
+    70%{
+        background-color: orange;
+    }
+    84%{
+        background-color: red;
+    }
+    100%{
+        background-color: violet;
+        transform: translateY(-50%) rotate(360deg);
+    }
+
+}
+
+.desc{
+    position: absolute;
+    left: 10%;
+    bottom: 30%;
+    color: white;
+    background: orangered;
+    font-family: "Poppins", sans-serif;
+    border-radius: 100vmax;
+    display: block;
+    width: 80%;
+    height: 10%;
+    text-align: center;
+}
