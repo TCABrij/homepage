@@ -80,9 +80,11 @@ function openLink(event){
     return 
   }
 
-  const url = target.dataset.url
+  // const url = target.dataset.url
+  let hiddenElement = target.querySelector('.hiddenURL')
+  let url = hiddenElement.value
 
-  // Creat Anchor and set url | 
+  // Create Anchor and set url | 
   const anchor = document.createElement('a')
   anchor.href = url
   anchor.target = "_blank"
@@ -90,7 +92,9 @@ function openLink(event){
 
   // Click Simulation
   anchor.click()
-  console.log(url)
+
+  // Remove anchor from DOM
+  anchor.remove()
 }
 
 
@@ -114,13 +118,12 @@ function editAndUpdateTheCard(targetButton){
   const [title, url, id] = modalData
 
   if(isValidUrl(url)){
-    //Update  the Card UI with new Data
-    const targetCard = document.getElementById(id)
-    targetCard.querySelector('.link-title').textContent = title
-    targetCard.querySelector('.link-src').textContent = url
 
     // Update Data in LocalStorage
     updateById({title, url, id})
+
+    //Reload the Cards
+    reloadCards()
 
     // close the dialog
     document.querySelector("#myDialog").close()
@@ -128,4 +131,20 @@ function editAndUpdateTheCard(targetButton){
 
   
   
+}
+
+function reloadCards(){
+  let linksJsonString = localStorage.getItem("links");
+  let linksObj = JSON.parse(linksJsonString)
+
+  // clear previous links 
+  let links = document.querySelector('.links')
+  links.innerHTML = ` <p class="no-links hidden">
+    <span> You've no Favorite links, Please add some 🤷‍♂️ </span>
+    </p>`
+
+  // Adding updated links one by one 
+  linksObj.links.forEach((link) => {
+    renderLinkToUi(link);
+  });
 }
