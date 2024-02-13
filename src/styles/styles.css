@@ -92,15 +92,28 @@
     float: right;
     background-color: teal;
     color: white;
-    padding: .5rem .8rem;
+    padding: .3rem .8rem;
     border-radius: 100vmax;
-    font-size: 1rem;
+    font-size: .8rem;
     box-sizing: border-box;
     cursor: pointer;
-    transition: scale .2s, box-shadow .2s;
+    transition: scale .1s, box-shadow .2s;
     scale: 1.05;
     user-select: none;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, .5);
+}
+/* Sorting  */
+.sort.btn,
+.invert.btn{
+   clear: both;
+   padding: .3rem 1rem;
+   margin: 0;
+   background-color: rgba(255,255, 255, .3);
+   box-shadow: none;
+
+}
+.sort:disabled{
+    cursor:not-allowed;
 }
 
 .btn:active,
@@ -363,11 +376,8 @@ img.dots:hover{
     }
 }
 
-/* snapping scroll  */
-body{
-    overflow: auto;
-    scroll-snap-type: mandatory;
-}
+/* Work in Progress Section  */
+
 .section-extras{
     display: grid;
     place-content: center;
@@ -463,3 +473,5 @@ body{
     height: 10%;
     text-align: center;
 }
+
+
