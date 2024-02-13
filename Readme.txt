@@ -1,6 +1,6 @@
 Known Bugs
 ==========
-Editing favorite links doesn't update the DOM(without refresh)
+Sorting cards
 
 To dos
 ===================

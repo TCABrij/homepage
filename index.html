@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <!-- I know the code is really messed up, I can optimize it 
+    but I believe the fact: "if it works, don't touch it" 🙂 -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,30 +39,9 @@
                 <span class="add-new-link"> + </span>
             </p>
             <div class="links">
-
                 <p class="no-links hidden">
                     <span> You've no Favorite links, Please add some 🤷‍♂️ </span>
                 </p>
-
-                <!-- Link Card Template  -->
-                <!-- <div class="link-card hidden show" id=${uniqueId}>
-                    <img src="src/img/icons/folder.png" alt="" class="logo">
-                    <div class="link-data">
-                        <p class="link-title" data-title="${siteTitle}"> Site Title </p>
-                        <p class="link-src" data-url="${url}"> https://example.com/</p>
-                    </div>
-                    <div class="link-options">
-                        <div class="relative-wrapper">
-                            <button class="options-toggle-btn">
-                                <img src="src/img/icons/dots.svg" class="dots" alt="options">
-                                <div class="options">
-                                    <p class="edit" onClick="editOrDelete(this)">Edit</p>
-                                    <p class="delete" onClick="editOrDelete(this)">Delete</p>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
@@ -139,7 +119,6 @@
         </div>
         <!-- Edit  -->
         <img title="Edit Name" onclick="changeUserName()" src="src/img/icons/edit.svg" alt="edit" class="edit-btn-img">
-
     </div>
 
     <script>

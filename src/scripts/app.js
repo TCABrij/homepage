@@ -1,3 +1,9 @@
+
+// I know the code is really messed up, I can optimize it 
+// but I know the fact: "if it works, don't touch it" 🙂
+
+
+
 //                    //
 //    First Visit     //
 //                   //
@@ -31,11 +37,11 @@ if (isFirstVisit == null) {
 }
 
 //                //
-//  Reguler user //
+//  Regular user //
 //              //
 
 if (isFirstVisit == 0) {
-  // Show things for reguler user
+  // Show things for regular user
   const userName = localStorage.getItem("username");
   setGreeting(userName);
   mainViewDiv.classList.add("show");
