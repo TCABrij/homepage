@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="src/styles/settings.css">
     <script defer src="src/scripts/app.js"></script>
     <script src="src/scripts/functions.js" defer></script>
+    <script src="src/scripts/sorting.js" defer></script>
 </head>
 
 <body>
@@ -36,7 +37,9 @@
         <!-- User Favorite links  -->
         <div class="favourites-view block-center" id="style-1">
             <p class="favourites-title"> Favorites
-                <span class="add-new-link"> + </span>
+                <button class="sort btn" onclick="sortLinkCards()">Sort A-Z</button>
+                <button class="invert btn">Invert</button>
+                <span class="add-new-link"> Add </span>
             </p>
             <div class="links">
                 <p class="no-links hidden">
