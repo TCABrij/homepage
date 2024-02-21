@@ -106,14 +106,15 @@
 .sort.btn,
 .invert.btn{
    clear: both;
-   padding: .3rem 1rem;
+   padding: 0.1rem 1rem;
    margin: 0;
    background-color: rgba(255,255, 255, .3);
    box-shadow: none;
-
 }
-.sort:disabled{
-    cursor:not-allowed;
+
+.sort-svg{
+    aspect-ratio: 1;
+    width: 1.2rem;
 }
 
 .btn:active,

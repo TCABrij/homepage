@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- I know the code is really messed up, I can optimize it 
+<!-- I know the code is really messed up, I can optimize it 
     but I believe the fact: "if it works, don't touch it" 🙂 -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +27,8 @@
         <!-- contains search  -->
         <div class="dashboard-view">
             <div class="search-view">
-                <img src="src/img/icons/browse.jpg" style="border-radius: 50%;" class="browse-img block-center untouchable" alt="">
+                <img src="src/img/icons/browse.jpg" style="border-radius: 50%;"
+                    class="browse-img block-center untouchable" alt="">
                 <form action="https://google.com/search?" class="block-center search-form">
                     <input type="text" placeholder="Got Issues?" autofocus required name="q" id="q" autocomplete="off">
                     <input type="submit" class="search-btn" value="Search">
@@ -37,8 +39,12 @@
         <!-- User Favorite links  -->
         <div class="favourites-view block-center" id="style-1">
             <p class="favourites-title"> Favorites
-                <button class="sort btn" onclick="sortLinkCards()">Sort A-Z</button>
-                <button class="invert btn">Invert</button>
+                <button class="sort btn" onclick="sortLinkCards()" title="Sort A-Z">
+                    <img class="sort-svg" src="src/img/icons/sort.svg" alt="sort">
+                </button>
+                <button class="invert btn" onclick="reverseLinkCards()" title="Reverse Order">
+                    <img class="sort-svg" src="src/img/icons/reverse.svg" alt="sort">
+                </button>
                 <span class="add-new-link"> Add </span>
             </p>
             <div class="links">
