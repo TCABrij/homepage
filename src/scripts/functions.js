@@ -172,3 +172,13 @@ function sortLinkCards() {
   reloadCards()
 }
 
+function reverseLinkCards(){
+  // get the links and reverse
+  let linksObj = JSON.parse(localStorage.getItem('links'))
+  linksObj.links.reverse()
+
+  // Save the links and reload cards
+  let reversedObj = JSON.stringify(linksObj)
+  localStorage.setItem('links', reversedObj)
+  reloadCards()
+}
