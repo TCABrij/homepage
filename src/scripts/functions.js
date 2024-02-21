@@ -111,7 +111,9 @@ function updateModal(target) {
   //set current info to dialog
   document.querySelector("#titleInput").value = currentTitle;
   document.querySelector("#urlInput").value = currentUrl;
-  document.querySelector("#cardId").value = currentCard.id;
+
+  // If want to show id to user
+  // document.querySelector("#cardId").value = currentCard.id; 
 }
 
 function editAndUpdateTheCard(targetButton) {
@@ -169,3 +171,4 @@ function sortLinkCards() {
   // Re-render Cards
   reloadCards()
 }
+
