@@ -113,7 +113,7 @@ function updateModal(target) {
   document.querySelector("#urlInput").value = currentUrl;
 
   // If want to show id to user
-  // document.querySelector("#cardId").value = currentCard.id; 
+  document.querySelector("#cardId").value = currentCard.id; 
 }
 
 function editAndUpdateTheCard(targetButton) {
